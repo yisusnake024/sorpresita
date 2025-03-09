@@ -20,6 +20,7 @@
             text-align: center;
             position: relative;
             z-index: 2;
+            max-width: 90%;
         }
 
         .flor {
@@ -64,11 +65,9 @@
             font-size: 18px;
             color: #5e1780;
             font-weight: bold;
-            max-width: 400px;
+            max-width: 90%;  /* Se adapta a la pantalla */
             text-align: center;
             line-height: 1.5;
-            position: relative;
-            left: 125px;
         }
 
         /* Estilos de los corazones */
@@ -89,6 +88,59 @@
             100% {
                 transform: translateY(-10vh) scale(0.5);
                 opacity: 0;
+            }
+        }
+
+        /* 🛠️ 📱 Media Query: Ajustes para celulares */
+        @media (max-width: 600px) {
+            .flor {
+                width: 90px;
+                height: 90px;
+            }
+
+            .petalo {
+                width: 45px;
+                height: 80px;
+            }
+
+            .centro {
+                width: 40px;
+                height: 40px;
+                top: 25px;
+                left: 25px;
+            }
+
+            .mensaje {
+                font-size: 16px;
+                margin-top: 20px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+        }
+
+        /* 📱 Ajustes extra para celulares más pequeños */
+        @media (max-width: 400px) {
+            .flor {
+                width: 70px;
+                height: 70px;
+            }
+
+            .petalo {
+                width: 35px;
+                height: 60px;
+            }
+
+            .centro {
+                width: 30px;
+                height: 30px;
+                top: 20px;
+                left: 20px;
+            }
+
+            .mensaje {
+                font-size: 14px;
             }
         }
     </style>
@@ -135,3 +187,4 @@
     </script>
 </body>
 </html>
+
