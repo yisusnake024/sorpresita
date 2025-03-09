@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversario</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(white, #e6ccff);
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .flor {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: auto;
+        }
+
+        .petalo {
+            position: absolute;
+            width: 60px;
+            height: 100px;
+            background: radial-gradient(circle, #a32cc4, #7300a8);
+            border-radius: 50%;
+            top: 10px;
+            left: 30px;
+        }
+
+        .petalo:nth-child(1) { transform: rotate(0deg) translateY(-30px); }
+        .petalo:nth-child(2) { transform: rotate(45deg) translateY(-30px); }
+        .petalo:nth-child(3) { transform: rotate(90deg) translateY(-30px); }
+        .petalo:nth-child(4) { transform: rotate(135deg) translateY(-30px); }
+        .petalo:nth-child(5) { transform: rotate(180deg) translateY(-30px); }
+        .petalo:nth-child(6) { transform: rotate(225deg) translateY(-30px); }
+        .petalo:nth-child(7) { transform: rotate(270deg) translateY(-30px); }
+        .petalo:nth-child(8) { transform: rotate(315deg) translateY(-30px); }
+
+        .centro {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: yellow;
+            border-radius: 50%;
+            top: 35px;
+            left: 35px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .mensaje {
+            margin-top: 40px;
+            font-size: 18px;
+            color: #5e1780;
+            font-weight: bold;
+            max-width: 400px;
+            text-align: center;
+            line-height: 1.5;
+            position: relative;
+            left: 125px;
+        }
+
+        /* Estilos de los corazones */
+        .heart {
+            position: absolute;
+            color: #ff4d6d;
+            font-size: 20px;
+            animation: float 5s linear infinite;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(0.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌸 ¡Feliz 1 año y 11 meses, muñequita! 🌸</h1>
+        <div class="flor">
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="petalo"></div>
+            <div class="centro"></div>
+        </div>
+        <p class="mensaje">
+            Hoy celebramos 1 año y 11 meses juntos. Cada día que paso contigo me parece muy bonito,
+            y me siento muy orgulloso de tenerte como novia. Te amo con todo mi corazón
+            y espero seguir contando cada día a tu lado. ¡Por muchos meses y años más juntos! 💜
+        </p>
+    </div>
+
+    <script>
+        function crearCorazon() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            document.body.appendChild(heart);
+
+            const size = Math.random() * 30 + 10 + "px";
+            heart.style.fontSize = size;
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(crearCorazon, 300);
+    </script>
+</body>
+</html>
